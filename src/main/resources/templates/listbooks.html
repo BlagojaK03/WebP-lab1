@@ -33,22 +33,21 @@
 <main>
     <form action="/bookReservation" method="POST">
         <h2>Choose a book:</h2>
-        <div th:each="book : ${books}">
+        <div th:each="book : ${books}" class="book-option">
             <label>
-                <input type="radio" class="book-option" name="selectedBook" th:value="${book.getTitle()}"
+                <input type="radio" name="selectedBook" th:value="${book.getTitle()}"
                 th:text="'Title: ' + ${book.getTitle()} + ', Genre: ' + ${book.getGenre()} + ', Rating: ' + ${book.getAverageRating()}">
             </label>
-            <br>
         </div>
 
         <h2>Enter your information:</h2>
         <label>Your Name:</label>
-        <input type="text" name="readerName" required><br/>
+        <input type="text" name="readerName" id="readerName" required><br/>
         <label>Your Address:</label>
-        <input type="text" name="readerAddress" required><br/>
+        <input type="text" name="readerAddress" id="readerAddress" required><br/>
 
         <h2>Choose number of copies:</h2>
-        <input type="number" name="numCopies" min="1" max="10" required><br/>
+        <input type="number" name="numCopies" id="numCopies" min="1" max="10" required><br/>
         <br/>
         <input type="submit" value="Reserve Book">
     </form>

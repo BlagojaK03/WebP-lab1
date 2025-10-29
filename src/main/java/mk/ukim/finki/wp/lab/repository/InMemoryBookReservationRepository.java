@@ -10,7 +10,7 @@ public class InMemoryBookReservationRepository implements BookReservationReposit
     @Override
     public BookReservation save(BookReservation reservation) {
         DataHolder.reservations.add(reservation);
-        // return reservation;
-        return DataHolder.reservations.get(DataHolder.reservations.indexOf(reservation));
+         return reservation;
+//        return DataHolder.reservations.get(DataHolder.reservations.indexOf(reservation));
     }
 }
