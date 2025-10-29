@@ -31,7 +31,7 @@
     <h1>Welcome to our Book Reservation App</h1>
 </header>
 <main>
-    <form action="/bookReservation" method="POST">
+    <form th:action="@{/bookReservation}" th:method="POST">
         <h2>Choose a book:</h2>
         <div th:each="book : ${books}" class="book-option">
             <label>

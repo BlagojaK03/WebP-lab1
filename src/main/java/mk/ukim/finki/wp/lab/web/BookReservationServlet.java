@@ -18,10 +18,8 @@ import java.io.IOException;
 @WebServlet(name = "bookReservationPage", urlPatterns = "/bookReservation")
 public class BookReservationServlet extends HttpServlet {
     private final SpringTemplateEngine templateEngine;
-    private final BookReservationRepository bookReservationRepository;
 
-    public BookReservationServlet(BookReservationRepository bookReservationRepository, SpringTemplateEngine templateEngine) {
-        this.bookReservationRepository = bookReservationRepository;
+    public BookReservationServlet(SpringTemplateEngine templateEngine) {
         this.templateEngine = templateEngine;
     }
 
@@ -32,8 +30,6 @@ public class BookReservationServlet extends HttpServlet {
                 .buildExchange(req, resp);
 
         WebContext context = new WebContext(webExchange);
-
-//        BookReservation reservation = bookReservationRepository;
 
         getServletContext().setAttribute("readerName", "nameHere");
         getServletContext().setAttribute("clientIP", req.getRemoteAddr());
